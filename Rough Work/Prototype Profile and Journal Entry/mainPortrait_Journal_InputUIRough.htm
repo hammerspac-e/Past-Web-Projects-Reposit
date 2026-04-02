@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Main Portrait and Journal Entry Rough Input UI</title> <!-- HTML 5 Boilerplate -->
+<link rel="stylesheet" href="mainPortrait_Journal_InputUIRough.css">
+<script src="mainPortrait_Journal_InputUIRough.js" defer></script>
+
+</head>
+
+
+<body>
+
+<div class='pengPortrait'> 
+
+<div class='PortraitExpression'>
+<button class='express1' onclick='func_express1()'><img src='Icons/1F634_color.png' alt='sleepy emoji'></button>
+<button class='express2' onclick='func_express2()'><img src='Icons/1FAE8_color.png' alt='anxious emoji'></button>
+<button class='express3' onclick='func_express3()'><img src='Icons/1F601_color.png' alt='happy emoji'></button>
+<button class='express4' onclick='func_express4()'><img src='Icons/1F622_color.png' alt='sad emoji'></button>
+<button class='express5' onclick='func_express5()'><img src='Icons/1F621_color.png' alt='pissed emoji'></button>
+<button class='express6' onclick='func_express6()'><img src='Icons/1FAE3_color.png' alt='surprised emoji'></button>
+</div>
+
+<div class='PortraitFace' tabindex='0'>
+<img id='faceImg' src='Icons/1F601_color.png' alt='happy emoji'>
+</div>
+
+<div class='PortraitBackground'>
+<button class='bg1' onclick='func_bg1()'></button>
+<button class='bg2' onclick='func_bg2()'></button>
+<button class='bg3' onclick='func_bg3()'></button>
+<button class='bg4' onclick='func_bg4()'></button>
+<button class='bg5' onclick='func_bg5()'></button>
+<button class='bg6' onclick='func_bg6()'></button>
+</div>
+
+</div> <!-- end of div class='pengPortrait' -->
+
+
+<div class='JournalEntry'> 
+
+<div class='journalObjective'><p>Write your own journal entry! Tell us how you think Ramen the Penguin’s day went. What do you think our penguin pal has been up to?</p></div>
+
+<div class='journalDate'>
+
+<label class='dateFinal'>Date: <span>text</span></label>
+
+<select id='dayFinal'>
+<option value = 'type'>--Day--</option>
+<option>1</option>
+<option>10</option>
+<option>20</option>
+<option>30</option>
+<option>31</option>
+</select>
+
+<select id='monthFinal'>
+<option value = 'type'>--Month--</option>
+<option>Jan</option>
+<option>Feb</option>
+<option>Mar</option>
+<option>Apr</option>
+<option>May</option>
+<option>Jun</option>
+<option>Jul</option>
+<option>Aug</option>
+<option>Sep</option>
+<option>Oct</option>
+<option>Nov</option>
+<option>Dec</option>
+</select>
+
+<select id='yearFinal'>
+<option value = 'type'>--Year--</option>
+<option>2008</option>
+<option>2009</option>
+<option>2010</option>
+<option>2012</option>
+</select>
+
+<br><label class='entryTitle'>Title: <span>text</span></label>
+<input class='titleInput'>
+</div>
+
+<div class='journalCustomize'>
+<div class='changeFont_wStylus'>
+<button class='stylus1' onclick='func_stylus1()'>1</button>
+<button class='stylus2' onclick='func_stylus2()'>2</button>
+<button class='stylus3' onclick='func_stylus3()'>3</button>
+<button class='stylus4' onclick='func_stylus4()'>4</button>
+</div>
+<div class='changeEntryBG'>
+<button class='entryBG1'>a</button>
+<button class='entryBG2'>b</button>
+<button class='entryBG3'>c</button>
+<button class='entryBG4'>d</button>
+</div>
+</div>
+
+<div class='journalBody'>
+
+<div class='bodyText'> 
+<p>Dear Diary,<button class='addText' onclick='func_ShowFormBodyText()'>Add text</button></p><p class='entryText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+
+<div class='linedSheet'>
+<div class='lines'></div>
+<div class='lines'></div>
+<div class='lines'></div>
+<div class='lines'></div>
+<div class='lines'></div>
+<div class='lines'></div>
+<div class='lines'></div>
+<div class='lines'></div>
+</div>
+</div> <!-- end of div class='journalBody' -->
+
+<div>
+<button class='submitJournal' onclick='func_submitJournal()'>Submit</button>
+<button id='editJournal' onclick='func_editJournal()'>Edit</button>
+</div>
+
+</div> <!-- end of div class='JournalEntry' -->
+
+<dialog class='addBodyForm'>
+<p>Enter your text below:</p>
+<textarea id='yourWriting' oninput='func_CharCount()'>Today, I...</textarea>
+<span>Characters left: <span id='charTotal'>340</span></span>
+<button class='closeBodyForm' onclick='func_CloseBodyForm()'>Ok</button>
+</dialog>
+
+</body>
+
+</html>

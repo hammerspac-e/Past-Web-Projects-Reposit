@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>adminDashboardv2</title> <!-- HTML 5 Boilerplate -->
+<!-- <link rel="stylesheet" href="style.css"> -->
+<!-- <script src="index.js" defer></script> -->
+
+<style> /*Internal CSS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+margin: 0;
+width: 100vw;
+height: 100vh;
+display: grid;
+grid-template-columns: 178px auto 188px;
+grid-template-rows: 104px 260px auto;
+font-size: 16px;
+font-weight: bold;
+font-family: Roboto;
+}
+
+.nav{
+background: #1992D4;
+width: 100%;
+height: 100%;
+grid-column: 1 / 2;
+grid-row: 1 / -1;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(18, 1fr);
+padding-top: 10px;
+color: white;
+font-size: 0.9rem;
+letter-spacing: 0.05rem;
+box-shadow: 1px 2px 4px rgb(0 0 0 /8%); 
+}
+
+.nav > div{
+grid-column: 2 / -1;
+}
+
+.nav > div:first-of-type{
+font-size: 1.1rem;
+padding-top: 0.4rem;
+}
+
+.nav > img{
+margin-left: 22px;
+width: 1rem;
+height: 1rem;
+filter: invert(100%);
+}
+
+.nav > img:first-of-type{
+margin-left: 10px;
+width: 2rem;
+height: 2rem;
+}
+
+.banner{
+min-width: 500px;
+grid-column: 2 / -1;
+grid-row: 1 / 2;
+display: grid;
+grid-template-columns: repeat(24, 1fr);
+grid-template-rows: repeat(2, 1fr);
+box-shadow: 0 5px rgb(0 0 0 /50%); 
+}
+
+.banner > div{
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.banner > div:nth-of-type(4){
+flex-direction: column;
+align-items: start;
+justify-content: center;
+padding: 1rem;
+}
+
+.bannerRect1{
+grid-column: 1 / 18;
+grid-row: 1 / 2;
+padding-left: 25px;
+}
+
+.bannerRect2{
+grid-column: 20 / -1;
+grid-row: 1 / 2;
+}
+
+.bannerRect3{
+grid-column: 2 / 17;
+grid-row: 2 / -1;
+}
+
+.bannerRect4{
+grid-column: 19 / -1;
+grid-row: 2 / -1;
+}
+
+.bannerRect5{
+grid-column: 1 / 2;
+grid-row: 2 / -1;
+padding-left: 25px;
+}
+
+.bannerRect5 > img{
+background: #FACC15;
+width: 3.2rem;
+height: 3.2rem;
+border-radius: 50%;
+}
+
+.bannerRect1 > input{
+background: #E2E8F0;
+width: 450px;
+height: 1.2rem;
+border-radius: 0.6rem;
+border: none;
+margin-left: 1rem;
+}
+
+.bannerRect1 > input:focus{
+outline: none;
+padding-left: 0.5rem;
+}
+
+.bannerRect1 > img{
+width: 1rem;
+height: 1rem;
+}
+
+.bannerRect2 > img:first-of-type{
+width: 1rem;
+height: 1rem;
+margin-right: 1.2rem;
+}
+
+.bannerRect2 > img:last-of-type{
+background: #FACC15;
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+margin-right: 1rem;
+}
+
+.bannerRect2 > div{
+font-size: 0.8rem;
+}
+
+.bannerRect3 > img{
+background: #FACC15;
+width: 3.2rem;
+height: 3.2rem;
+border-radius: 50%;
+}
+
+.bannerRect3 > div:first-of-type{
+font-size: 0.6rem;
+}
+
+.bannerRect3 > div:last-of-type{
+font-size: 1.1rem;
+}
+
+.bannerRect4 > button{
+background: #1992D4;
+min-width: 4.2rem;
+height: 1.6rem;
+border-radius: 0.8rem;
+border: none;
+text-align: center;
+color: white;
+font-weight: bold;
+font-size: 0.7rem;
+letter-spacing: 0;
+}
+
+.bannerRect4 > button:nth-of-type(-n+2){
+margin-right: 1rem;
+}
+
+.yourProjects{
+background: #E2E8F0;
+grid-column: 2 / 3;
+grid-row: 2 / -1;
+display: flex;
+flex-wrap: wrap;
+align-content: start;
+min-width: 244px;
+padding: 20px 0 0 10px; 
+}
+
+.post{
+background: white;
+width: 230px;
+height: 140px;
+margin: 0 12px 15px 0;
+display: grid;
+grid-template-rows: repeat(4, 1fr);
+font-weight: normal;
+border-left: #F0B429 solid 5px;
+border-radius: 6px;
+box-shadow: 1px 2px 4px rgb(0 0 0 /8%); 
+}
+
+.post > div{
+padding: 0 15px;
+}
+
+.title{
+font-size: 0.9rem;
+width: 100%;
+height: 1rem;
+margin-bottom: 10px;
+}
+
+.post > div:first-child{
+padding-top: 20px;
+font-weight: bold;
+font-size: 0.8rem;
+}
+
+.post > div:nth-child(2){
+font-size: 0.8rem;
+color: grey;
+padding-right: 30px;
+padding-top: 5px;
+}
+
+.post > div:last-child{
+padding-top: 20px;
+display: flex;
+justify-content: end;
+}
+
+.post > div:last-child > img{
+width: 1rem;
+height: 1rem;
+margin-left: 1.2rem;
+filter: invert(15%);
+}
+
+.post > div:last-child > img:last-child{
+transform: rotate(-90deg); 
+}
+
+.announcements{
+background: #E2E8F0;
+grid-column: 3 / -1;
+grid-row: 2 / 3;
+}
+
+.announcements > .title{
+margin-top: 20px;
+}
+
+.board{
+background: white;
+width: 160px;
+height: 200px;
+box-shadow: 1px 2px 4px rgb(0 0 0 /8%); 
+border-radius: 6px;
+padding: 10px  0;
+}
+
+.announcements > .board {
+display: grid;
+grid-template-rows: repeat(3, 1fr);
+align-items: center;
+}
+
+.announcement{
+padding: 0 20px;
+font-size: 0.7rem;
+font-weight: bold;
+}
+
+.announcement > div:nth-of-type(2){
+font-size: 0.5rem;
+color: grey;
+font-weight: normal;
+}
+
+.announcement > div:last-of-type{
+background: lightgrey;
+width: 95%;
+height: 1px;
+margin-top: 10px;
+}
+
+.announcement:last-of-type > div:last-of-type{
+background: white;
+width: 95%;
+height: 1px;
+}
+
+.trending{
+background: #E2E8F0;
+grid-column: 3 / -1;
+grid-row: 3 / -1;
+}
+
+.trending > .title{
+margin-top: 25px;
+}
+
+.trending > .board{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, 1fr);
+align-items: center;
+}
+
+.trending > .board > img{
+background: #FACC15;
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+grid-column: 1 / 2;
+margin-left: 10px;
+}
+
+.trending > .board > img:first-of-type{
+background: #E0F2FE;
+}
+
+.trending > .board > img:nth-of-type(3){
+background: #A3A3A3;
+}
+
+.trending > .board > img:last-of-type{
+background: #FDA4AF;
+}
+
+.flex2{
+grid-column: 2 / -1;
+font-size: 0.7rem;
+font-weight: normal;
+}
+
+.flex2 > div:last-of-type{
+color: grey;
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+<div class="nav">
+<img src="icons/view-dashboard.png"><div>Dashboard</div>
+<div></div>
+<img src="icons/home.png"><div>Home</div>
+<img src="icons/card-account-details-outline.png"><div>Profile</div>
+<img src="icons/message-reply.png"><div>Messages</div>
+<img src="icons/clock-time-three.png"><div>History</div>
+<img src="icons/note-multiple.png"><div>Tasks</div>
+<img src="icons/account-group.png"><div>Communities</div>
+<div></div>
+<img src="icons/cog.png"><div>Settings</div>
+<img src="icons/help-box.png"><div>Support</div>
+<img src="icons/shield-check.png"><div>Privacy</div>
+</div>
+
+<div class="banner">
+<div class="bannerRect1"><img src="icons/magnify.png"><input></div>
+<div class="bannerRect2"><img src="icons/bell-ring-outline.png"><img src="icons/1645776215Bad_catWhite.png"><div>Morgan Oakley</div></div>
+<div class="bannerRect5"><img src="icons/1645776215Bad_catWhite.png"></div>
+<div class="bannerRect3"><div>Hi there,</div><div>Morgan Oakley (@morgan)</div></div>
+<div class="bannerRect4"><button>New</button><button>Upload</button><button>Share</button></div>
+</div>
+
+<div class="yourProjects">
+<div class="title">Your Projects</div>
+<div class="post">
+<div>Super Cool Project</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Less Cool Project</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Impossible App</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Easy Peasy App</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Ad Blocker</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Money Maker</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Awesome Website</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Less Awesome Website</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Other Stuff</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>More Stuff</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>Even More Stuff</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+<div class="post">
+<div>A Lot of Stuff</div>
+<div>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+<div><img src="icons/star-plus-outline.png"><img src="icons/eye-plus-outline.png"><img src="icons/share-variant-outline.png"></div>
+</div>
+</div>
+
+<div class="announcements">
+<div class="title">Announcements</div>
+<div class="board">
+<div class="announcement"><div>Site Maintenance</div><div>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit...</div><div></div></div>
+<div class="announcement"><div>Community Share Day</div><div>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse...</div><div></div></div>
+<div class="announcement"><div>Updated Privacy Policy</div><div>Ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid...</div><div></div></div>
+</div>
+</div>
+
+<div class="trending">
+<div class="title">Trending</div>
+<div class="board">
+<img src="icons/pngegg.png">
+<div class="flex2"><div>@tegan</div><div>World Peace Builder</div></div>
+<img src="icons/1645776215Bad_catWhite.png">
+<div class="flex2"><div>@morgan</div><div>Super Cool Project</div></div>
+<img src="icons/105385-cute-spider-man-photos-the-into-spider-verse_600x600.png">
+<div class="flex2"><div>@kendall</div><div>Life Changing App</div></div>
+<img src="icons/freezin_penguin.png">
+<div class="flex2"><div>@alex</div><div>No Traffic Maker</div></div>
+</div>
+</div>
+</div>
+
+<script> //Internal JAVASCRIPT.
+</script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+body{
+background: lightgrey;
+}
+
+/*STYLING FOR PENGUIN PORTRAIT*/
+
+.pengPortrait{	
+background: grey;
+width: 250px;
+height: 250px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(4, 1fr); 
+border: grey solid 10px;
+margin-left: 100px;
+}
+
+.PortraitExpression, .PortraitBackground{
+background: lightgrey;
+grid-column: 1 / 2;
+grid-row: 1 / 4;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+visibility: hidden;
+}
+
+.PortraitBackground{
+flex-direction: row;
+}
+
+.PortraitExpression > button, .PortraitBackground > button{
+width: 20px;
+height: 20px;
+margin-top: 5px;
+padding: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.PortraitBackground > button{
+margin-top: 0;
+margin-right: 5px;
+}
+
+.PortraitExpression > button > img, .PortraitBackground > button > img{
+width: 18px;
+height: 18px;
+}
+
+.PortraitExpression > button:hover::before{
+background: goldenrod;
+position: absolute;
+margin-left: -100px; /*margin-bottom has no effect, why>*/
+border: goldenrod solid 5px;
+text-align: center;
+width: 60px;
+}
+
+.express1:hover::before{content:'Sleepy';}
+.express2:hover::before{content:'Anxious';}
+.express3:hover::before{content:'Happy';}
+.express4:hover::before{content:'Sad';}
+.express5:hover::before{content:'Pissed';}
+.express6:hover::before{content:'Surprised';}
+
+.PortraitBackground > button:hover::before{
+background: goldenrod;
+position: absolute;
+margin-top: 55px; /*margin-bottom has no effect, why>*/
+border: goldenrod solid 5px;
+text-align: center;
+width: 60px;
+}
+
+.bg1{background: pink;}
+.bg2{background: blue;}
+.bg3{background: red;}
+.bg4{background: orange;}
+.bg5{background: white;}
+.bg6{background: black;}
+
+.bg1:hover::before{content:'Pink';}
+.bg2:hover::before{content:'Blue';}
+.bg3:hover::before{content:'Red';}
+.bg4:hover::before{content:'Orange';}
+.bg5:hover::before{content:'White';}
+.bg6:hover::before{content:'Black';}
+
+.PortraitBackground{
+background: lightgrey;
+grid-column: 2 / -1;
+grid-row: 4 / -1;
+}
+
+.PortraitFace{
+background: white;
+grid-column: 2 / -1;
+grid-row: 1 / 4;
+border: grey solid 2px;
+border-width: 0 0 2px 2px;
+}
+
+.PortraitFace > img{
+width: 182px;
+height: 182px;
+}
+
+/*STYLING FOR JOURNAL ENTRY*/
+
+.JournalEntry{
+background: grey;
+width: 400px;
+height: 600px;
+margin-top: 4rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+font-size: 0.8rem;
+}
+
+.journalObjective{
+background: lightgrey;
+width: 380px;
+height: 60px;
+margin-top: 1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.journalObjective > p{
+background: gainsboro;
+margin: 0;
+width: 90%;
+}
+
+.journalDate{
+align-self: flex-start;
+margin-left: 20px;
+}
+
+.titleInput{
+margin-left: 1px;
+}
+
+.dateFinal > span{
+display: none; /*visibility = collapse doesn't work on span elements?*/
+}
+
+.entryTitle > span{
+display: none;
+}
+
+.journalCustomize{
+width: 350px;
+display: flex;
+justify-content: space-between;
+}
+
+.changeFont_wStylus{
+display: flex;
+}
+
+.changeEntryBG{
+display: flex;
+}
+
+.changeFont_wStylus > button, .changeEntryBG > button{
+width: 20px;
+height: 20px;
+margin-right: 5px;
+padding: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.changeEntryBG > button{
+margin-right: 0;
+margin-left: 5px;
+}
+
+.changeFont_wStylus > button:hover::before{
+background: goldenrod;
+position: absolute;
+margin-top: 55px; /*margin-bottom has no effect, why>*/
+border: goldenrod solid 5px;
+text-align: center;
+width: 80px;
+height: minmax(1rem, auto, 2rem);
+z-index: 1;
+}
+
+.stylus1:hover::before{content: 'Times New Roman';}
+.stylus2:hover::before{content: 'Courier New';}
+.stylus3:hover::before{content: 'Brush Script M7';}
+.stylus4:hover::before{content: 'Papyrus';}
+
+.entryBG1{background: pink;}
+.entryBG2{background: blue;}
+.entryBG3{background: red;}
+.entryBG4{background: orange;}
+
+.journalBody{
+display: flex;
+flex-direction: column;
+}
+
+.journalBody, .bodyText, .linedSheet{
+width: 350px;
+height: 340px;
+}
+
+.bodyText{
+position: absolute;	
+z-index: 1;
+}
+
+.bodyText > p{
+margin: 0;
+margin-left: 40px;
+width: 80%;
+line-height: calc(2rem + 1px); /*height + width of bottom-border of lines*/
+}
+
+.bodyText > p:first-of-type{
+margin-top: 10px;
+}
+
+.linedSheet{
+background: lightgrey;
+position: absolute;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.lines{
+width: 80%;
+height: 2rem;
+border-bottom: dimgrey dotted 1px;
+}
+
+#editJournal{
+display: none;
+}
+
+.addBodyForm:open{
+background: grey;
+width: 290px;
+height: 330px;
+border: none;
+padding: 0.5rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.addBodyForm::backdrop{
+display: none;
+}
+
+.addBodyForm > p{
+align-self: start;
+}
+
+.addBodyForm > textarea{
+width: 250px;
+height: 240px;
+}
+
+.closeBodyForm{
+width: fit-content;
+margin-top: 5px;
+}
+
+.addBodyForm > span{
+align-self: end;
+}

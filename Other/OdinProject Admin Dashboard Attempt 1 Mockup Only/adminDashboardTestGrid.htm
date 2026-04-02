@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>adminDashboard Test Grid</title> <!-- HTML 5 Boilerplate -->
+<!-- <link rel="stylesheet" href="style.css"> -->
+<!-- <script src="index.js" defer></script> -->
+
+<style> /*Internal CSS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+margin: 0;
+background: lightblue;
+width: 100vw;
+height: 100vh;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(4, 1fr);
+}
+
+.box1{
+background: salmon;
+grid-column: 1 / -1;
+grid-row: 1 / 2;
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+grid-template-rows: repeat(2, 1fr);
+}
+
+.box1 > div:last-child{
+background: pink;
+grid-column: 6 / -1;
+grid-rows: 1 / -1;
+}
+
+button{
+background: green;
+width: 50px;
+height: 20px;
+margin-right: 200px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="box1">
+<div></div>
+<div><button>111111111111</button><button></button><button></button></div>
+</div>
+
+<script> //Internal JAVASCRIPT.
+</script>
+</body>
+
+</html>
